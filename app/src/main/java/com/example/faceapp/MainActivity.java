@@ -33,17 +33,17 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
         setContentView(R.layout.activity_live_preview);
 
-        preview = (CameraSourcePreview) findViewById(R.id.firePreview);
+        preview = findViewById(R.id.firePreview);
         if (preview == null) {
             Log.d(TAG, "Preview is null");
         }
-        graphicOverlay = (GraphicOverlay) findViewById(R.id.fireFaceOverlay);
+        graphicOverlay = findViewById(R.id.fireFaceOverlay);
         if (graphicOverlay == null) {
             Log.d(TAG, "graphicOverlay is null");
         }
 
 
-        ToggleButton facingSwitch = (ToggleButton) findViewById(R.id.facingswitch);
+        ToggleButton facingSwitch = findViewById(R.id.facingswitch);
         facingSwitch.setOnCheckedChangeListener(this);
 
         if (allPermissionsGranted()) {

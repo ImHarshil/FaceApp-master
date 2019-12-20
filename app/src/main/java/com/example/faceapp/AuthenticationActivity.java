@@ -16,7 +16,7 @@ public class AuthenticationActivity extends Activity implements FingerPrintAuthC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentication);
-        mFingerPrintAuthHelper = FingerPrintAuthHelper.getHelper(this, (FingerPrintAuthCallback) this);
+        mFingerPrintAuthHelper = FingerPrintAuthHelper.getHelper(this, this);
     }
     @Override
     protected void onResume() {
