@@ -27,7 +27,7 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFace;
  */
 public class FaceGraphic extends GraphicOverlay.Graphic {
   private static final float FACE_POSITION_RADIUS = 10.0f;
-  private static final float ID_TEXT_SIZE = 40.0f;
+  private static final float ID_TEXT_SIZE = 50.0f;
   private static final float ID_Y_OFFSET = 50.0f;
   private static final float ID_X_OFFSET = -50.0f;
   private static final float BOX_STROKE_WIDTH = 5.0f;
