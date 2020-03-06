@@ -27,7 +27,8 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFace;
  */
 public class FaceGraphic extends GraphicOverlay.Graphic {
   private static final float FACE_POSITION_RADIUS = 10.0f;
-  private static final float ID_TEXT_SIZE = 50.0f;
+  private static final float ID_TEXT_SIZE = 40.0f;
+  private static final float ID_TEXT_SIZE2 = 70.0f;
   private static final float ID_Y_OFFSET = 50.0f;
   private static final float ID_X_OFFSET = -50.0f;
   private static final float BOX_STROKE_WIDTH = 5.0f;
@@ -41,6 +42,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
 
   private final Paint facePositionPaint;
   private final Paint idPaint;
+  private final Paint idPaint2;
   private final Paint boxPaint;
 
   private volatile FirebaseVisionFace firebaseVisionFace;
@@ -57,6 +59,11 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
     idPaint = new Paint();
     idPaint.setColor(selectedColor);
     idPaint.setTextSize(ID_TEXT_SIZE);
+
+    idPaint2 = new Paint();
+    idPaint2.setColor(selectedColor);
+    idPaint2.setTextSize(ID_TEXT_SIZE2);
+
 
     boxPaint = new Paint();
     boxPaint.setColor(selectedColor);
@@ -90,8 +97,8 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
     canvas.drawText(
         "happiness: " + String.format("%.2f", face.getSmilingProbability()),
         x + ID_X_OFFSET * 3,
-        y - ID_Y_OFFSET,
-        idPaint);
+        y - ID_Y_OFFSET * 6,
+        idPaint2);
     if (facing == CameraSource.CAMERA_FACING_FRONT) {
       canvas.drawText(
           "right eye: " + String.format("%.2f", face.getRightEyeOpenProbability()),
